@@ -1,0 +1,9 @@
+[package]
+name = "geometer"
+version = "0.1.0"
+authors = ["Timothée Haudebourg <timothee.haudebourg@hemisemi.fr>"]
+edition = "2018"
+
+[dependencies]
+glam = "^0.12"
+memoffset = { version = "^0.6", features = ["unstable_const"] }
