@@ -46,6 +46,17 @@ impl Precision {
 		self.max_index = std::cmp::max(self.max_index, face.max_index());
 		self.faces.push(face)
 	}
+
+	pub fn faces(&self) -> &[Face] {
+		&self.faces
+	}
+
+	pub fn indices(&self) -> &[u32] {
+		let ptr = self.faces.as_ptr() as *const u32;
+		unsafe {
+			std::slice::from_raw_parts(ptr, self.faces.len() * 3)
+		}
+	}
 }
 
 /// Typed geometry.
